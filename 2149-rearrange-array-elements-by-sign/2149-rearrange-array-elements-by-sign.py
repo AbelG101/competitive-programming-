@@ -13,8 +13,8 @@ class Solution(object):
                 positives.append(num)
             else: negatives.append(num)
 
-        for pos, neg in zip(positives, negatives):
-            result.extend([pos, neg])
+        for i in range(len(positives)):
+            result.extend([positives[i], negatives[i]])
 
         return result
         
