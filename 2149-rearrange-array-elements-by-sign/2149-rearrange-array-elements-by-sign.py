@@ -4,17 +4,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        negatives = []
-        positives = []
-        result = []
+        positive_idx = 0
+        negative_idx = 1
+        result = [0] * len(nums)
 
         for num in nums:
             if num > 0:
-                positives.append(num)
-            else: negatives.append(num)
-
-        for i in range(len(positives)):
-            result.extend([positives[i], negatives[i]])
+                result[positive_idx] = num
+                positive_idx += 2
+            else: 
+                result[negative_idx] = num
+                negative_idx += 2
 
         return result
         
